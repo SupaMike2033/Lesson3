@@ -16,6 +16,7 @@ public class CalcMain extends AppCompatActivity {
         initView();
     }
 
+    // допишу чуть позже
     private void initView() {
 //        textCounter1 = findViewById(R.id.text1);
 //        textCounter2 = findViewById(R.id.text2);
