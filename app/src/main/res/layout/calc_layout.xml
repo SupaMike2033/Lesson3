@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#041404"
+    tools:context=".Calc.CalcMain">
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp"
+        android:background="#97e784"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:text="0"
+        android:textColor="#484244"
+        android:textSize="70sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_reserved"
+        style="@style/func_buttons"
+        android:layout_marginTop="10dp"
+        android:text="-?-"
+        android:layout_marginStart="0dp"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toStartOf="@+id/display"
+        app:layout_constraintTop_toBottomOf="@+id/display" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_MC"
+        android:text="MC"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_reserved"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_MR"
+        android:text="MR"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_MC"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_MPlus"
+        android:text="M+"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_MR"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_MMinus"
+        android:text="M-"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_MPlus"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Erase"
+        android:text="←"
+        android:layout_marginStart="0dp"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toStartOf="@+id/button_reserved"
+        app:layout_constraintTop_toBottomOf="@+id/button_reserved"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_CE"
+        android:text="CE"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_Erase"
+        app:layout_constraintTop_toBottomOf="@+id/button_reserved"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_SQR"
+        android:text="√"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_CE"
+        app:layout_constraintTop_toBottomOf="@+id/button_reserved"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_PlusMinus"
+        android:text="+/-"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_SQR"
+        app:layout_constraintTop_toBottomOf="@+id/button_reserved"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_C"
+        android:text="C"
+        app:backgroundTint="#79190b"
+        app:layout_constraintStart_toEndOf="@+id/button_PlusMinus"
+        app:layout_constraintTop_toBottomOf="@+id/button_reserved"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_7"
+        android:text="7"
+        android:layout_marginStart="0dp"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toStartOf="@+id/button_Erase"
+        app:layout_constraintTop_toBottomOf="@+id/button_Erase"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_8"
+        android:text="8"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_7"
+        app:layout_constraintTop_toBottomOf="@+id/button_Erase"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_9"
+        android:text="9"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_8"
+        app:layout_constraintTop_toBottomOf="@+id/button_Erase"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Divide"
+        android:text="/"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_9"
+        app:layout_constraintTop_toBottomOf="@+id/button_Erase"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Percent"
+        android:text="%"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_Divide"
+        app:layout_constraintTop_toBottomOf="@+id/button_Erase"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_4"
+        android:text="4"
+        android:layout_marginStart="0dp"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toStartOf="@+id/button_7"
+        app:layout_constraintTop_toBottomOf="@+id/button_7"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_5"
+        android:text="5"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_4"
+        app:layout_constraintTop_toBottomOf="@+id/button_7"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_6"
+        android:text="6"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_5"
+        app:layout_constraintTop_toBottomOf="@+id/button_7"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Multi"
+        android:text="*"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_6"
+        app:layout_constraintTop_toBottomOf="@+id/button_7"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_OneByX"
+        android:text="1/x"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_Multi"
+        app:layout_constraintTop_toBottomOf="@+id/button_7"
+        style="@style/func_buttons" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_1"
+        android:text="1"
+        android:layout_marginStart="0dp"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toStartOf="@+id/button_4"
+        app:layout_constraintTop_toBottomOf="@+id/button_4"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_2"
+        android:text="2"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_1"
+        app:layout_constraintTop_toBottomOf="@+id/button_4"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_3"
+        android:text="3"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_2"
+        app:layout_constraintTop_toBottomOf="@+id/button_4"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Minus"
+        android:text="-"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_3"
+        app:layout_constraintTop_toBottomOf="@+id/button_4"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Equals"
+        android:text="="
+        android:layout_height="0dp"
+        app:backgroundTint="#774f1b"
+        app:layout_constraintStart_toEndOf="@+id/button_Minus"
+        app:layout_constraintTop_toBottomOf="@+id/button_4"
+        app:layout_constraintBottom_toBottomOf="@+id/button_Plus"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_0"
+        android:text="0"
+        android:layout_marginStart="0dp"
+        android:layout_width="0dp"
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toStartOf="@+id/button_1"
+        app:layout_constraintTop_toBottomOf="@+id/button_1"
+        app:layout_constraintEnd_toEndOf="@+id/button_2"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Point"
+        android:text="."
+        app:backgroundTint="#1d1d1f"
+        app:layout_constraintStart_toEndOf="@+id/button_0"
+        app:layout_constraintTop_toBottomOf="@+id/button_1"
+        style="@style/func_buttons" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_Plus"
+        android:text="+"
+        app:backgroundTint="#3e3e3e"
+        app:layout_constraintStart_toEndOf="@+id/button_Point"
+        app:layout_constraintTop_toBottomOf="@+id/button_1"
+        style="@style/func_buttons" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
