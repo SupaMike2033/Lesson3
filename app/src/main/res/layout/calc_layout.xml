@@ -12,11 +12,11 @@
         android:id="@+id/display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:layout_marginTop="@dimen/display_marginTop"
         android:background="#97e784"
         android:gravity="end"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:text="0"
         android:textColor="#484244"
         android:textSize="@dimen/display_textSize"
@@ -26,7 +26,7 @@
         android:id="@+id/button_reserved"
         style="@style/func_buttons"
         android:layout_marginStart="@dimen/button_margin_start"
-        android:layout_marginTop="@dimen/button_margin_top"
+        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="..."
 
         app:backgroundTint="@color/func_button_grey"
@@ -36,6 +36,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MC"
         style="@style/func_buttons"
+        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="MC"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_reserved"
@@ -44,6 +45,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MR"
         style="@style/func_buttons"
+        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="MR"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_MC"
@@ -52,6 +54,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MPlus"
         style="@style/func_buttons"
+        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="M+"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_MR"
@@ -60,6 +63,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MMinus"
         style="@style/func_buttons"
+        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="M-"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_MPlus"
