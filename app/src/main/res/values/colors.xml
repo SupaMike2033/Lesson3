@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="func_button_grey">#3e3e3e</color>
+    <color name="num_button_dark_grey">#1d1d1f</color>
+    <color name="C_button_dark_red">#79190b</color>
+    <color name="equals_button_orange">#774f1b</color>
 </resources>

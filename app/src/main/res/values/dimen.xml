@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_height">70dp</dimen>
+    <dimen name="button_width">70dp</dimen>
+    <dimen name="button_margin_start">10dp</dimen>
+    <dimen name="button_margin_top">10dp</dimen>
+    <dimen name="button_textSize">20sp</dimen>
+    <dimen name="button_marginStart">0sp</dimen>
+    <dimen name="button_marginEnd">0sp</dimen>
+    <dimen name="display_textSize">70sp</dimen>
+    <dimen name="display_marginTop">10sp</dimen>
+    <dimen name="display_marginStart">0sp</dimen>
+    <dimen name="display_marginEnd">0sp</dimen>
+    <dimen name="equal_button_height">0sp</dimen>
+    <dimen name="zero_button_width">0sp</dimen>
+
+</resources>

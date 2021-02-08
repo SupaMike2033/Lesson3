@@ -2,12 +2,11 @@
 <resources>
 
     <style name="func_buttons">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">10dp</item>
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:background">#3e3e3e</item>
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_marginStart">@dimen/button_margin_start</item>
+        <item name="android:layout_marginTop">@dimen/button_margin_top</item>
+        <item name="android:textColor">@color/func_button_text_color_selector</item>
+        <item name="android:textSize">@dimen/button_textSize</item>
     </style>
 </resources>
