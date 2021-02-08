@@ -9,4 +9,8 @@
         <item name="android:textColor">@color/func_button_text_color_selector</item>
         <item name="android:textSize">@dimen/button_textSize</item>
     </style>
+
+    <style name="num_buttons" parent="func_buttons">
+        <item name="android:textColor">#aa0000</item>
+    </style>
 </resources>

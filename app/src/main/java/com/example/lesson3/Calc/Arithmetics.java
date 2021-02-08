@@ -1,5 +1,7 @@
 package com.example.lesson3.Calc;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class Arithmetics {
     private List<Object> list = new ArrayList<>();
 
     public void setDot(boolean dot) {
+        if (list.contains(".")) return;
         if (list.size() == 0) {        // если первая нажатая кнопка - точка
             list.add(0);
         }
@@ -28,6 +31,7 @@ public class Arithmetics {
 
     public void setButtonPressed(int buttonPressed) {
         if (buttonPressed == 0 && list.size() == 0) return;
+        if (list.size() == 1 && list.get(0).equals(0)) list.clear();
         list.add(buttonPressed);
         setResultToScreen(list);
     }
@@ -73,5 +77,17 @@ public class Arithmetics {
         operand = 0.0;
         list.clear();
         display.setDisplayText("0");
+    }
+
+    public void eraseLast() {
+        if(list.size() == 0) return;;
+        if(list.size() == 1) {
+            operand = 0.0;
+            list.clear();
+            display.setDisplayText("0");
+        } else {
+            list.remove(list.size() - 1);
+            setResultToScreen(list);
+        }
     }
 }

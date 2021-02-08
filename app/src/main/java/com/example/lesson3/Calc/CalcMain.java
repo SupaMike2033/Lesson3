@@ -1,5 +1,6 @@
 package com.example.lesson3.Calc;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -30,6 +31,9 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
         displayTextView = findViewById(R.id.display);
         display = new Display(displayTextView);
         arithmetics = new Arithmetics(display);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/7segment.ttf");
+        displayTextView.setTypeface(tf);
 
         button_settings = findViewById(R.id.button_reserved);
         button_MC = findViewById(R.id.button_MC);
@@ -103,7 +107,6 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_MR:
             case R.id.button_MPlus:
             case R.id.button_MMinus:
-            case R.id.button_Erase:
             case R.id.button_CE:
             case R.id.button_SQR:
             case R.id.button_PlusMinus:
@@ -116,6 +119,12 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_Equals:
                 Toast.makeText(getApplicationContext(), "Кнопка ещё не готова", Toast.LENGTH_SHORT).show();
                 break;
+
+            case R.id.button_Erase:
+                arithmetics.eraseLast();
+                break;
+
+
             case R.id.button_Point:
                 arithmetics.setDot(true);
                 break;

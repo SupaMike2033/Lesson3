@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#030303"
@@ -11,11 +12,10 @@
         android:id="@+id/display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/display_marginStart"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:layout_marginTop="@dimen/display_marginTop"
-        android:layout_marginEnd="@dimen/display_marginEnd"
         android:background="#97e784"
-        android:fontFamily="monospace"
         android:gravity="end"
         android:text="0"
         android:textColor="#484244"
@@ -28,8 +28,8 @@
         android:layout_marginStart="@dimen/button_margin_start"
         android:layout_marginTop="@dimen/button_margin_top"
         android:text="..."
+
         app:backgroundTint="@color/func_button_grey"
-        android:textColor="@color/func_button_text_color_selector"
         app:layout_constraintStart_toStartOf="@+id/display"
         app:layout_constraintTop_toBottomOf="@+id/display" />
 
