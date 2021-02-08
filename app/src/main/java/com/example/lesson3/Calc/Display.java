@@ -28,7 +28,6 @@ public class Display implements Parcelable {
         StringBuilder stringBuilder = new StringBuilder();
         if(!isDot) {
             stringBuilder.append(String.format("%.0f", result));
-//            display.setText(String.format("%.0f", result));     // 0 знаков после запятой
         } else {
             double tmp = result - (int) result;
             if((result % 1) == 0) {                             // точка только что нажата (дробной части ещё нет)
@@ -36,12 +35,10 @@ public class Display implements Parcelable {
                 stringBuilder.append(".");
             } else {
                 stringBuilder.append(result);
-//                display.setText(String.format("%f" ,result));       // ?? знаков после запятой
             }
         }
         setDisplayText(stringBuilder.toString());
     }
-
 
 
 

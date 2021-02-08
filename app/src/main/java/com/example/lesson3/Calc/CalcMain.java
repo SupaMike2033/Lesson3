@@ -124,43 +124,33 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.button_7:
                 arithmetics.setButtonPressed(7);
-//                button_7_onClick();
                 break;
             case R.id.button_8:
                 arithmetics.setButtonPressed(8);
-//                button_8_onClick();
                 break;
             case R.id.button_9:
                 arithmetics.setButtonPressed(9);
-//                button_9_onClick();
                 break;
             case R.id.button_4:
                 arithmetics.setButtonPressed(4);
-//                button_4_onClick();
                 break;
             case R.id.button_5:
                 arithmetics.setButtonPressed(5);
-//                button_5_onClick();
                 break;
             case R.id.button_6:
                 arithmetics.setButtonPressed(6);
-//                button_6_onClick();
                 break;
             case R.id.button_1:
                 arithmetics.setButtonPressed(1);
-//                button_1_onClick();
                 break;
             case R.id.button_2:
                 arithmetics.setButtonPressed(2);
-//                button_2_onClick();
                 break;
             case R.id.button_3:
                 arithmetics.setButtonPressed(3);
-//                button_3_onClick();
                 break;
             case R.id.button_0:
                 arithmetics.setButtonPressed(0);
-//                button_0_onClick();
                 break;
         }
     }
