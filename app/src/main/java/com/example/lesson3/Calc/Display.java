@@ -10,10 +10,14 @@ import com.google.android.material.textview.MaterialTextView;
 public class Display implements Parcelable {
     private double displayValue = 0.0;
     private String displayText = "";
-    private MaterialTextView display;
+    private MaterialTextView display, memoryDisplay, actionDisplay, signDisplay;
 
-    public Display(MaterialTextView display) {
+    // displayTextView, memoryDisplay, actionDisplay, signDisplay
+    public Display(MaterialTextView display, MaterialTextView memoryDisplay, MaterialTextView actionDisplay, MaterialTextView signDisplay) {
         this.display = display;
+        this.memoryDisplay = memoryDisplay;
+        this.actionDisplay = actionDisplay;
+        this.signDisplay = signDisplay;
     }
 
     public double getDisplayValue() {
@@ -38,6 +42,14 @@ public class Display implements Parcelable {
             }
         }
         setDisplayText(stringBuilder.toString());
+    }
+
+    public void setSignDisplay(boolean sign) {
+        if(sign) {
+            signDisplay.setText("-");
+        } else {
+            signDisplay.setText("");
+        }
     }
 
 

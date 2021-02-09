@@ -9,18 +9,71 @@
     tools:context=".Calc.CalcMain">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/display"
+        android:id="@+id/actionDisplay"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/display_marginTop"
+        android:background="#97e784"
+        android:gravity="left"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:text="%"
+        android:textColor="#484244"
+        android:textSize="@dimen/memoryDisplay_textSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/memoryDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/display_marginTop"
         android:background="#97e784"
         android:gravity="end"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingRight="5dp"
+        android:text="1230"
+        android:textColor="#484244"
+        android:textSize="@dimen/memoryDisplay_textSize"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/actionDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/actionDisplay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/signDisplay"
+        android:layout_width="35dp"
+        android:layout_height="100dp"
+        android:background="#97e784"
+        android:gravity="left"
+        android:paddingLeft="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColor="#484244"
+        android:textSize="@dimen/display_textSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionDisplay" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#97e784"
+        android:gravity="end"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="0dp"
         android:text="0"
         android:textColor="#484244"
         android:textSize="@dimen/display_textSize"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/signDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/signDisplay"
+
+        app:layout_constraintTop_toTopOf="@+id/signDisplay" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_reserved"
@@ -30,44 +83,41 @@
         android:text="..."
 
         app:backgroundTint="@color/func_button_grey"
-        app:layout_constraintStart_toStartOf="@+id/display"
-        app:layout_constraintTop_toBottomOf="@+id/display" />
+        app:layout_constraintStart_toStartOf="@+id/signDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/signDisplay" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MC"
         style="@style/func_buttons"
-        android:layout_marginTop="@dimen/button_first_row_margin_top"
+
         android:text="MC"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_reserved"
-        app:layout_constraintTop_toBottomOf="@+id/display" />
+        app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MR"
         style="@style/func_buttons"
-        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="MR"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_MC"
-        app:layout_constraintTop_toBottomOf="@+id/display" />
+        app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MPlus"
         style="@style/func_buttons"
-        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="M+"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_MR"
-        app:layout_constraintTop_toBottomOf="@+id/display" />
+        app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MMinus"
         style="@style/func_buttons"
-        android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="M-"
         app:backgroundTint="@color/func_button_grey"
         app:layout_constraintStart_toEndOf="@+id/button_MPlus"
-        app:layout_constraintTop_toBottomOf="@+id/display" />
+        app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Erase"

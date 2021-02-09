@@ -13,7 +13,7 @@ import com.google.android.material.textview.MaterialTextView;
 
 public class CalcMain extends AppCompatActivity implements View.OnClickListener {
 
-    MaterialTextView displayTextView;
+    MaterialTextView displayTextView, signDisplay, actionDisplay, memoryDisplay;
     Display display;
     Arithmetics arithmetics;
     MaterialButton button_settings, button_MC, button_MR, button_MPlus, button_MMinus, button_Erase, button_CE, button_SQR, button_PlusMinus, button_C, button_Divide, button_Percent, button_Multiply, button_OneByX,
@@ -29,7 +29,10 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
 
     private void initView() {
         displayTextView = findViewById(R.id.display);
-        display = new Display(displayTextView);
+        signDisplay = findViewById(R.id.signDisplay);
+        actionDisplay = findViewById(R.id.actionDisplay);
+        memoryDisplay = findViewById(R.id.memoryDisplay);
+        display = new Display(displayTextView, memoryDisplay, actionDisplay, signDisplay);
         arithmetics = new Arithmetics(display);
 
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/7segment.ttf");
@@ -109,7 +112,6 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_MMinus:
             case R.id.button_CE:
             case R.id.button_SQR:
-            case R.id.button_PlusMinus:
             case R.id.button_Divide:
             case R.id.button_Percent:
             case R.id.button_Multi:
@@ -119,12 +121,12 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_Equals:
                 Toast.makeText(getApplicationContext(), "Кнопка ещё не готова", Toast.LENGTH_SHORT).show();
                 break;
-
+            case R.id.button_PlusMinus:
+                arithmetics.setNegativeSign();
+                break;
             case R.id.button_Erase:
                 arithmetics.eraseLast();
                 break;
-
-
             case R.id.button_Point:
                 arithmetics.setDot(true);
                 break;

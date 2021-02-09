@@ -10,6 +10,7 @@ public class Arithmetics {
     private Display display;
     private double result = 0.0;
     private double operand = 0.0;
+    private boolean negativeSign = false;
     private List<Object> list = new ArrayList<>();
 
     public void setDot(boolean dot) {
@@ -75,7 +76,9 @@ public class Arithmetics {
     public void eraseAll() {
         result = 0.0;
         operand = 0.0;
+        negativeSign = false;
         list.clear();
+        display.setSignDisplay(negativeSign);
         display.setDisplayText("0");
     }
 
@@ -89,5 +92,13 @@ public class Arithmetics {
             list.remove(list.size() - 1);
             setResultToScreen(list);
         }
+    }
+
+    public void setNegativeSign() {
+        Log.d("MMM", "negativeSign ДО: " + negativeSign + " ... " + operand);
+        operand = -operand;
+        negativeSign = !negativeSign;
+        Log.d("MMM", "negativeSign ПОСЛЕ: " + negativeSign + " ... " + operand);
+        display.setSignDisplay(negativeSign);
     }
 }
