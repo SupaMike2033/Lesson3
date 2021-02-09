@@ -2,6 +2,7 @@ package com.example.lesson3.Calc;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -52,6 +53,11 @@ public class Display implements Parcelable {
         }
     }
 
+    public char getActionDisplay() {
+        Log.d("MMM", "getActionDisplay: " + actionDisplay.getText());
+        return actionDisplay.getText().charAt(0);
+    }
+
 
 
     protected Display(Parcel in) {
@@ -76,5 +82,9 @@ public class Display implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+    }
+
+    public void setActionDisplay(String s) {
+        actionDisplay.setText(s);
     }
 }

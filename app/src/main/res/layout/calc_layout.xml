@@ -17,7 +17,7 @@
         android:gravity="left"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:text="%"
+        android:text=""
         android:textColor="#484244"
         android:textSize="@dimen/memoryDisplay_textSize"
         app:layout_constraintStart_toStartOf="parent"

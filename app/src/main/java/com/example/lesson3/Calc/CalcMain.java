@@ -117,9 +117,13 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_Multi:
             case R.id.button_OneByX:
             case R.id.button_Minus:
-            case R.id.button_Plus:
-            case R.id.button_Equals:
                 Toast.makeText(getApplicationContext(), "Кнопка ещё не готова", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_Equals:
+                arithmetics.equalsPressed();
+                break;
+            case R.id.button_Plus:
+                arithmetics.actionPlus();
                 break;
             case R.id.button_PlusMinus:
                 arithmetics.setNegativeSign();
@@ -134,34 +138,34 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
                 arithmetics.eraseAll();
                 break;
             case R.id.button_7:
-                arithmetics.setButtonPressed(7);
+                arithmetics.setDigitPressed(7);
                 break;
             case R.id.button_8:
-                arithmetics.setButtonPressed(8);
+                arithmetics.setDigitPressed(8);
                 break;
             case R.id.button_9:
-                arithmetics.setButtonPressed(9);
+                arithmetics.setDigitPressed(9);
                 break;
             case R.id.button_4:
-                arithmetics.setButtonPressed(4);
+                arithmetics.setDigitPressed(4);
                 break;
             case R.id.button_5:
-                arithmetics.setButtonPressed(5);
+                arithmetics.setDigitPressed(5);
                 break;
             case R.id.button_6:
-                arithmetics.setButtonPressed(6);
+                arithmetics.setDigitPressed(6);
                 break;
             case R.id.button_1:
-                arithmetics.setButtonPressed(1);
+                arithmetics.setDigitPressed(1);
                 break;
             case R.id.button_2:
-                arithmetics.setButtonPressed(2);
+                arithmetics.setDigitPressed(2);
                 break;
             case R.id.button_3:
-                arithmetics.setButtonPressed(3);
+                arithmetics.setDigitPressed(3);
                 break;
             case R.id.button_0:
-                arithmetics.setButtonPressed(0);
+                arithmetics.setDigitPressed(0);
                 break;
         }
     }
