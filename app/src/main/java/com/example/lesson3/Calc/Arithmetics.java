@@ -43,8 +43,17 @@ public class Arithmetics {
     }
 
     public void setDigitPressed(int buttonPressed) {
+//        Log.d("MMM", "setDigitPressed: list.size = " + list.size());
         if (buttonPressed == 0 && list.size() == 0) return;
-        if (list.size() == 1 && list.get(0).equals(0)) list.clear();
+        if (list.size() == 1 && list.get(0).equals(0)) {
+            list.clear();
+        }
+        if (list.size() == 0) {
+            if (!negativeSign) {
+                negativeSign = false;
+                display.setSignDisplay(false);
+            }
+        }
         if (result == operand && (int) display.getActionDisplay() != ' ') {
             negativeSign = false;
             display.setSignDisplay(false);
@@ -93,8 +102,6 @@ public class Arithmetics {
         display.setDisplayText(stringBuilder.toString());
     }
 
-
-
     public void eraseAll() {
         result = 0.0;
         operand = 0.0;
@@ -124,12 +131,39 @@ public class Arithmetics {
     }
 
     public void actionPlus() {
+        double tmpCoef = 1.0;
+        if (negativeSign) tmpCoef = -1.0;
         if (display.getActionDisplay() != '+') {        // + нажат первый раз
-            result = getValueFromList();
+            result = getValueFromList() * tmpCoef;
             operand = 0;
             list.clear();
             display.setActionDisplay("+");
-            equalsWasPressed = false;
+        } else {                                        // + нажат не первый раз
+            if(!equalsWasPressed) {
+                result += operand * tmpCoef;
+                Log.d("MMM", Double.toString(result));
+                setValueToList(result);
+                setValueToScreen(list);
+                operand = 0;
+                list.clear();
+                display.setActionDisplay("+");
+            } else {                                    // + нажат первый раз после клавиши "=", на дисплее всё ещё горит "+"
+                operand = 0;
+                list.clear();
+            }
+            negativeSign = false;
+        }
+        equalsWasPressed = false;
+        negativeSign = false;
+//        display.setSignDisplay(false);
+    }
+
+    public void actionMinus() {
+        if (display.getActionDisplay() != '-') {        // - нажат первый раз
+            result = getValueFromList();
+            operand = 0;
+            list.clear();
+            display.setActionDisplay("-");
         } else {                                        // + нажат не первый раз
             if(!equalsWasPressed) {
                 result += operand;
@@ -138,31 +172,15 @@ public class Arithmetics {
                 operand = 0;
                 list.clear();
                 display.setActionDisplay("+");
-                equalsWasPressed = false;
-            } else {
+            } else {                                    // + нажат первый раз после клавиши "=", на дисплее всё ещё горит "+"
                 operand = 0;
                 list.clear();
-                equalsWasPressed = false;
             }
+            negativeSign = false;
+            display.setSignDisplay(false);
         }
+        equalsWasPressed = false;
     }
-
-//    public void actionPlus() {
-////        Log.d("MMM", "getValueFromList = " + getValueFromList());
-//        if(display.getActionDisplay() != ' ') {
-////            equalsPressed();
-//            operand = 0.0;
-//        }
-//        Log.d("MMM", "actionPlus1.result = " + result + "; operand = " + operand);
-//        result += operand;
-//        operand = 0;
-//        list.clear();
-//        Log.d("MMM", "actionPlus2.result = " + result + "; operand = " + operand);
-//        display.setActionDisplay("+");
-//        setResultToList(result);
-//        setResultToScreen(list);
-//        Log.d("MMM", "actionPlus3.result = " + result + "; operand = " + operand);
-//    }
 
     public void equalsPressed() {
         equalsWasPressed = true;
@@ -172,7 +190,6 @@ public class Arithmetics {
                 Log.d("MMM", "equalsPressed1.result = " + result + "; operand = " + operand);
                 result += operand;
                 break;
-
         }
         Log.d("MMM", "equalsPressed2.result = " + result + "; operand = " + operand);
         pushOperand();
@@ -213,19 +230,6 @@ public class Arithmetics {
         for (int i = dotIndex + 1; i < tmp.length(); i++) {
             list.add(Character.getNumericValue(tmp.charAt(i)));
         }
-    }
-
-    public void actionMinus() {
-        if(display.getActionDisplay() != ' ') operand = 0.0;
-        Log.d("MMM", "actionMinus1.result = " + result + "; operand = " + operand);
-        result += operand;
-        operand = 0;
-        list.clear();
-        Log.d("MMM", "actionMinus2.result = " + result + "; operand = " + operand);
-        display.setActionDisplay("-");
-        setValueToList(result);
-        setValueToScreen(list);
-        Log.d("MMM", "actionMinus3.result = " + result + "; operand = " + operand);
     }
 
     public double getValueFromList() {
