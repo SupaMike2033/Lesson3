@@ -116,8 +116,10 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_Percent:
             case R.id.button_Multi:
             case R.id.button_OneByX:
-            case R.id.button_Minus:
                 Toast.makeText(getApplicationContext(), "Кнопка ещё не готова", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_Minus:
+                arithmetics.actionMinus();
                 break;
             case R.id.button_Equals:
                 arithmetics.equalsPressed();

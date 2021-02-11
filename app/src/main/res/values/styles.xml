@@ -4,7 +4,7 @@
     <style name="func_buttons" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:layout_width">@dimen/button_width</item>
         <item name="android:layout_height">@dimen/button_height</item>
-        <item name="android:layout_marginStart">@dimen/button_margin_start</item>
+        <item name="android:layout_marginStart">10dp</item>
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:textColor">@color/func_button_text_color_selector</item>
         <item name="android:textSize">@dimen/button_textSize</item>

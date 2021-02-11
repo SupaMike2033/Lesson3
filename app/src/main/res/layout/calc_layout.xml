@@ -17,7 +17,7 @@
         android:gravity="left"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:text=""
+        android:text=" "
         android:textColor="#484244"
         android:textSize="@dimen/memoryDisplay_textSize"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:text=""
+        android:text=" "
         android:textColor="#484244"
         android:textSize="@dimen/display_textSize"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +78,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_reserved"
         style="@style/func_buttons"
-        android:layout_marginStart="@dimen/button_margin_start"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="@dimen/button_first_row_margin_top"
         android:text="..."
 

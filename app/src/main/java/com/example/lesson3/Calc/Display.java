@@ -49,7 +49,7 @@ public class Display implements Parcelable {
         if(sign) {
             signDisplay.setText("-");
         } else {
-            signDisplay.setText("");
+            signDisplay.setText(" ");
         }
     }
 
