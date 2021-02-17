@@ -1,7 +1,10 @@
 package com.example.lesson3.Calc;
 
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ThemeUtils.onActivityCreateSetTheme(this);
         setContentView(R.layout.calc_layout);
 
         initView();
@@ -33,7 +37,7 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
         actionDisplay = findViewById(R.id.actionDisplay);
         memoryDisplay = findViewById(R.id.memoryDisplay);
         display = new Display(displayTextView, memoryDisplay, actionDisplay, signDisplay);
-        arithmetics = new Arithmetics(display);
+        arithmetics = new Arithmetics(display, this);
 
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/7segment.ttf");
         displayTextView.setTypeface(tf);
@@ -104,8 +108,6 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_reserved:
-                recreate();
             case R.id.button_MC:
             case R.id.button_MR:
             case R.id.button_MPlus:
@@ -117,6 +119,9 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
             case R.id.button_Multi:
             case R.id.button_OneByX:
                 Toast.makeText(getApplicationContext(), "Кнопка ещё не готова", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_reserved:
+                arithmetics.menuPressed(this);
                 break;
             case R.id.button_Minus:
                 arithmetics.actionMinus();
@@ -172,5 +177,16 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        savePreferences();
+    }
+
+    private void savePreferences() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences.edit().putInt(ThemeUtils.THEME_KEY, Constants.currentTheme).commit();
+        Log.d("MMM", "Theme saved into prefs = " + Constants.currentTheme);
+    }
 
 }

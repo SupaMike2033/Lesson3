@@ -15,5 +15,7 @@
     <dimen name="display_marginEnd">0sp</dimen>
     <dimen name="equal_button_height">0sp</dimen>
     <dimen name="zero_button_width">0sp</dimen>
+    <dimen name="display_paddingLeft">5dp</dimen>
+    <dimen name="display_paddingTop">5dp</dimen>
 
 </resources>

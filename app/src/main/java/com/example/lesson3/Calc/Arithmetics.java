@@ -1,6 +1,14 @@
 package com.example.lesson3.Calc;
 
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.Application;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.res.Resources;
 import android.util.Log;
+
+import com.example.lesson3.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +16,7 @@ import java.util.List;
 public class Arithmetics {
 
     private Display display;
+    private Activity activity;
     private double result = 0.0;
     private double operand = 0.0;
     private boolean negativeSign = false;
@@ -15,9 +24,21 @@ public class Arithmetics {
     private double tmp;
     private boolean equalsWasPressed = false;
 
+    public Arithmetics(Display display, Activity activity) {
+        this.display = display;
+        this.activity = activity;
+    }
+
+    public double getOperand() {
+        return operand;
+    }
+
     public void setDot(boolean dot) {
-//        Log.d("MMM", "operand = "+ operand + "; result = " + result);
         if (list.contains(".")) return;
+        if (!negativeSign) {
+            negativeSign = false;
+            display.setSignDisplay(false);
+        }
         if (list.size() == 0) {        // если первая нажатая кнопка - точка
             list.add(0);
         }
@@ -29,30 +50,18 @@ public class Arithmetics {
             list.clear();
             list.add(0);
         }
-
         list.add(".");
         setValueToScreen(list);
     }
 
-    public Arithmetics(Display display) {
-        this.display = display;
-    }
-
-    public double getOperand() {
-        return operand;
-    }
-
     public void setDigitPressed(int buttonPressed) {
-//        Log.d("MMM", "setDigitPressed: list.size = " + list.size());
+        if (!negativeSign) {
+            negativeSign = false;
+            display.setSignDisplay(false);
+        }
         if (buttonPressed == 0 && list.size() == 0) return;
         if (list.size() == 1 && list.get(0).equals(0)) {
             list.clear();
-        }
-        if (list.size() == 0) {
-            if (!negativeSign) {
-                negativeSign = false;
-                display.setSignDisplay(false);
-            }
         }
         if (result == operand && (int) display.getActionDisplay() != ' ') {
             negativeSign = false;
@@ -61,15 +70,14 @@ public class Arithmetics {
             display.setDisplayText("");
             list.clear();
         }
-
         list.add(buttonPressed);
         setValueToScreen(list);
     }
 
-    public void setValueToScreen(List list) {      // печатаем результат
+    public void setValueToScreen(List list) {       // печатаем результат
         StringBuilder stringBuilder = new StringBuilder();
 
-        if (list.contains(".")) {                    // в списке есть десятичная точка? 123457.987
+        if (list.contains(".")) {                   // в списке есть десятичная точка? 123457.987
             StringBuilder intPart = new StringBuilder();
             StringBuilder fractPart = new StringBuilder();
             int dotIndex = list.indexOf(".");
@@ -122,6 +130,7 @@ public class Arithmetics {
             list.remove(list.size() - 1);
             setValueToScreen(list);
         }
+        display.setActionDisplay(" ");
     }
 
     public void setNegativeSign() {
@@ -136,7 +145,7 @@ public class Arithmetics {
         if (display.getActionDisplay() != '+') {        // + нажат первый раз
             result = getValueFromList() * tmpCoef;
             operand = 0;
-            list.clear();
+//            list.clear();
             display.setActionDisplay("+");
         } else {                                        // + нажат не первый раз
             if(!equalsWasPressed) {
@@ -145,17 +154,17 @@ public class Arithmetics {
                 setValueToList(result);
                 setValueToScreen(list);
                 operand = 0;
-                list.clear();
+//                list.clear();
                 display.setActionDisplay("+");
             } else {                                    // + нажат первый раз после клавиши "=", на дисплее всё ещё горит "+"
                 operand = 0;
-                list.clear();
+//                list.clear();
             }
             negativeSign = false;
         }
         equalsWasPressed = false;
         negativeSign = false;
-//        display.setSignDisplay(false);
+        list.clear();
     }
 
     public void actionMinus() {
@@ -280,5 +289,17 @@ public class Arithmetics {
 
     private void pushOperand() {
         tmp = operand;
+    }
+
+    public void menuPressed(Context context) {
+        Constants.currentTheme++;
+        if(Constants.currentTheme == Constants.themeNames.length) {
+            Constants.currentTheme = 0;
+        }
+        Resources resources = context.getResources();
+        String str = resources.getString(Constants.themeNames[Constants.currentTheme]);
+        Log.d("MMM", str + " = " + Constants.currentTheme);
+
+        ThemeUtils.setCalcTheme(activity, Constants.currentTheme);
     }
 }

@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="func_buttons" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="CalcDimentions" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:layout_width">@dimen/button_width</item>
         <item name="android:layout_height">@dimen/button_height</item>
         <item name="android:layout_marginStart">10dp</item>
         <item name="android:layout_marginTop">0dp</item>
-        <item name="android:textColor">@color/func_button_text_color_selector</item>
         <item name="android:textSize">@dimen/button_textSize</item>
     </style>
 
-    <style name="num_buttons" parent="func_buttons">
-        <item name="android:textColor">#aa0000</item>
+    <style name="AppTheme.CalcRegular" >
+        <item name="android:textColor">@color/button_text_color_selector</item>
+        <item name="displayColor">#97e784</item>
+        <item name="funcButtonColor">#3e3e3e</item>
+        <item name="numButtonColor">#1d1d1f</item>
+        <item name="buttonPressedTextColor">#000000</item>
+        <item name="buttonDigitTextColor">#FFFFFF</item>
+        <item name="buttonEqualColor">#774f1b</item>
+        <item name="buttonCColor">#79190b</item>
+        <item name="backgroundColor">#000000</item>
+        <item name="displayFontColor">#484244</item>
+        <item name="erase_icon">@drawable/clear_regular</item>
+        <item name="sqr_icon">@drawable/sqr_x_regular</item>
+        <item name="menu_icon">@drawable/menu_img_regular</item>
     </style>
+
+    <style name="AppTheme.CalcPink">
+        <item name="android:textColor">@color/button_text_color_selector</item>
+        <item name="displayColor">#eedae3</item>
+        <item name="funcButtonColor">#f49cc4</item>
+        <item name="numButtonColor">#f1d0e1</item>
+        <item name="buttonPressedTextColor">#FFFFFF</item>
+        <item name="buttonDigitTextColor">#611939</item>
+        <item name="buttonEqualColor">#f7c575</item>
+        <item name="buttonCColor">#f53d90</item>
+        <item name="backgroundColor">#6f073f</item>
+        <item name="displayFontColor">#611939</item>
+        <item name="erase_icon">@drawable/clear_regular</item>
+        <item name="sqr_icon">@drawable/sqr_x_regular</item>
+        <item name="menu_icon">@drawable/menu_img_regular</item>
+    </style>
+
 </resources>

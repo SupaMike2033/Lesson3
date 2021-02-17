@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/calc"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Calc">
+        android:theme="@style/AppTheme.CalcPink">
+
 <!--        <activity android:name=".ActivityLifeCycle.ActivityLifeCycle">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->

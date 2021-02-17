@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="displayColor" format="reference|color"/>
+    <attr name="displayFontColor" format="reference|color"/> <!--+-->
+    <attr name="funcButtonColor" format="reference|color"/> <!--+-->
+    <attr name="numButtonColor" format="reference|color"/> <!--+-->
+    <attr name="buttonTextColor" format="reference|color"/> <!--+-->
+    <attr name="buttonDigitTextColor" format="reference|color" /> <!--+-->
+    <attr name="buttonEqualColor" format="reference|color"/> <!--+-->
+    <attr name="buttonCColor" format="reference|color"/> <!--+-->
+    <attr name="backgroundColor" format="reference|color"/> <!--+-->
+    <attr name="erase_icon" format="reference|color" /> <!--+-->
+    <attr name="sqr_icon" format="reference|color" /> <!--+-->
+    <attr name="menu_icon" format="reference|color" /> <!--+-->
+    <attr name="buttonPressedTextColor" format="reference|color"/> <!--+-->
+
+</resources>

@@ -5,7 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#030303"
+    android:background="?backgroundColor"
     tools:context=".Calc.CalcMain">
 
     <com.google.android.material.textview.MaterialTextView
@@ -13,12 +13,12 @@
         android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/display_marginTop"
-        android:background="#97e784"
+        android:background="?attr/displayColor"
         android:gravity="left"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
+        android:paddingLeft="@dimen/display_paddingLeft"
+        android:paddingTop="@dimen/display_paddingTop"
         android:text=" "
-        android:textColor="#484244"
+        android:textColor="?displayFontColor"
         android:textSize="@dimen/memoryDisplay_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,12 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/display_marginTop"
-        android:background="#97e784"
+        android:background="?displayColor"
         android:gravity="end"
         android:paddingTop="5dp"
         android:paddingRight="5dp"
         android:text="1230"
-        android:textColor="#484244"
+        android:textColor="?displayFontColor"
         android:textSize="@dimen/memoryDisplay_textSize"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="@+id/actionDisplay"
@@ -45,13 +45,13 @@
         android:id="@+id/signDisplay"
         android:layout_width="35dp"
         android:layout_height="100dp"
-        android:background="#97e784"
+        android:background="?displayColor"
         android:gravity="left"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text=" "
-        android:textColor="#484244"
+        android:textColor="?displayFontColor"
         android:textSize="@dimen/display_textSize"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionDisplay" />
@@ -60,13 +60,13 @@
         android:id="@+id/display"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#97e784"
+        android:background="?displayColor"
         android:gravity="end"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingEnd="0dp"
         android:text="0"
-        android:textColor="#484244"
+        android:textColor="?displayFontColor"
         android:textSize="@dimen/display_textSize"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="@+id/signDisplay"
@@ -77,238 +77,265 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_reserved"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_marginStart="0dp"
         android:layout_marginTop="@dimen/button_first_row_margin_top"
-        android:text="..."
-
-        app:backgroundTint="@color/func_button_grey"
+        app:icon="?menu_icon"
+        app:iconTint="@color/button_text_color_selector"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toStartOf="@+id/signDisplay"
         app:layout_constraintTop_toBottomOf="@+id/signDisplay" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MC"
-        style="@style/func_buttons"
-
+        style="@style/CalcDimentions"
         android:text="MC"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_reserved"
         app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MR"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="MR"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_MC"
         app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MPlus"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="M+"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_MR"
         app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_MMinus"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="M-"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_MPlus"
         app:layout_constraintTop_toTopOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Erase"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_marginStart="@dimen/button_marginStart"
-        android:text="←"
-        app:backgroundTint="@color/func_button_grey"
+        app:icon="?erase_icon"
+        app:iconTint="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toStartOf="@+id/button_reserved"
         app:layout_constraintTop_toBottomOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_CE"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="CE"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_Erase"
         app:layout_constraintTop_toBottomOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_SQR"
-        style="@style/func_buttons"
-        android:text="√"
-        app:backgroundTint="@color/func_button_grey"
+        style="@style/CalcDimentions"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_CE"
+        app:icon="?sqr_icon"
+        app:iconTint="@color/button_text_color_selector"
         app:layout_constraintTop_toBottomOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_PlusMinus"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="+/-"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_SQR"
         app:layout_constraintTop_toBottomOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_C"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="C"
-        app:backgroundTint="@color/C_button_dark_red"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?buttonCColor"
         app:layout_constraintStart_toEndOf="@+id/button_PlusMinus"
         app:layout_constraintTop_toBottomOf="@+id/button_reserved" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_7"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_marginStart="@dimen/button_marginStart"
         android:text="7"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toStartOf="@+id/button_Erase"
         app:layout_constraintTop_toBottomOf="@+id/button_Erase" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_8"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="8"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_7"
         app:layout_constraintTop_toBottomOf="@+id/button_Erase" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_9"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="9"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_8"
         app:layout_constraintTop_toBottomOf="@+id/button_Erase" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Divide"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="/"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_9"
         app:layout_constraintTop_toBottomOf="@+id/button_Erase" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Percent"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="%"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_Divide"
         app:layout_constraintTop_toBottomOf="@+id/button_Erase" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_4"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_marginStart="@dimen/button_marginStart"
         android:text="4"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toStartOf="@+id/button_7"
         app:layout_constraintTop_toBottomOf="@+id/button_7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_5"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="5"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_4"
         app:layout_constraintTop_toBottomOf="@+id/button_7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_6"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="6"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_5"
         app:layout_constraintTop_toBottomOf="@+id/button_7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Multi"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="*"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_6"
         app:layout_constraintTop_toBottomOf="@+id/button_7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_OneByX"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="1/x"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_Multi"
         app:layout_constraintTop_toBottomOf="@+id/button_7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_1"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_marginStart="@dimen/button_marginStart"
         android:text="1"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toStartOf="@+id/button_4"
         app:layout_constraintTop_toBottomOf="@+id/button_4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="2"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_1"
         app:layout_constraintTop_toBottomOf="@+id/button_4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="3"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_2"
         app:layout_constraintTop_toBottomOf="@+id/button_4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Minus"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="-"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_3"
         app:layout_constraintTop_toBottomOf="@+id/button_4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Equals"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_height="@dimen/equal_button_height"
         android:text="="
-        app:backgroundTint="@color/equals_button_orange"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?buttonEqualColor"
         app:layout_constraintBottom_toBottomOf="@+id/button_Plus"
         app:layout_constraintStart_toEndOf="@+id/button_Minus"
         app:layout_constraintTop_toBottomOf="@+id/button_4" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_0"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:layout_width="0dp"
         android:layout_marginStart="@dimen/button_marginStart"
         android:text="0"
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintEnd_toEndOf="@+id/button_2"
         app:layout_constraintStart_toStartOf="@+id/button_1"
         app:layout_constraintTop_toBottomOf="@+id/button_1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Point"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="."
-        app:backgroundTint="@color/num_button_dark_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?numButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_0"
         app:layout_constraintTop_toBottomOf="@+id/button_1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_Plus"
-        style="@style/func_buttons"
+        style="@style/CalcDimentions"
         android:text="+"
-        app:backgroundTint="@color/func_button_grey"
+        android:textColor="@color/button_text_color_selector"
+        app:backgroundTint="?funcButtonColor"
         app:layout_constraintStart_toEndOf="@+id/button_Point"
         app:layout_constraintTop_toBottomOf="@+id/button_1" />
 

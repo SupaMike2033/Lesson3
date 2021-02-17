@@ -8,9 +8,26 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="func_button_grey">#3e3e3e</color>
-    <color name="num_button_dark_grey">#1d1d1f</color>
-    <color name="C_button_dark_red">#79190b</color>
-    <color name="equals_button_orange">#774f1b</color>
-    <color name="background_dark_grey">#030303</color>
+<!--    <color name="func_button_grey">#3e3e3e</color>-->
+<!--    <color name="num_button_dark_grey">#1d1d1f</color>-->
+<!--    <color name="C_button_dark_red">#79190b</color>-->
+<!--    <color name="equals_button_orange">#774f1b</color>-->
+<!--    <color name="background_dark_grey">#030303</color>-->
+<!--    <color name="display_background_regular">#97e784</color>-->
+<!--    <color name="display_font_regular">#484244</color>-->
+
+<!--    <color name="buttonPressedTextColor_regular">#010101</color>-->
+<!--    <color name="buttonReleasedTextColor_regular">#ffffff</color>-->
+
+<!--    <color name="displayColor">#97e784</color>-->
+<!--    <color name="funcButtonColor">#3e3e3e</color>-->
+<!--    <color name="numButtonColor">#1d1d1f</color>-->
+<!--    <color name="buttonTextColor">#FFFFFF</color>-->
+<!--    <color name="buttonPressedTextColor">#000000</color>-->
+<!--    <color name="buttonDigitTextColor">#FFFFFF</color>-->
+<!--    <color name="buttonEqualColor">#774f1b</color>-->
+<!--    <color name="buttonCColor">#79190b</color>-->
+<!--    <color name="backgroundColor">#000000</color>-->
+<!--    <color name="displayFontColor">#484244</color>-->
+
 </resources>
