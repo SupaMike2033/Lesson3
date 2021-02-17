@@ -45,4 +45,36 @@
         <item name="menu_icon">@drawable/menu_img_regular</item>
     </style>
 
+    <style name="AppTheme.CalcAbsBlack">
+        <item name="android:textColor">@color/button_text_color_selector</item>
+        <item name="displayColor">#000000</item>
+        <item name="funcButtonColor">#000000</item>
+        <item name="numButtonColor">#000000</item>
+        <item name="buttonPressedTextColor">#705000</item>
+        <item name="buttonDigitTextColor">#FFFFFF</item>
+        <item name="buttonEqualColor">#774f1b</item>
+        <item name="buttonCColor">#700000</item>
+        <item name="backgroundColor">#000000</item>
+        <item name="displayFontColor">#FFFFFF</item>
+        <item name="erase_icon">@drawable/clear_regular</item>
+        <item name="sqr_icon">@drawable/sqr_x_regular</item>
+        <item name="menu_icon">@drawable/menu_img_regular</item>
+    </style>
+
+    <style name="AppTheme.CalcOrange">
+        <item name="android:textColor">@color/button_text_color_selector</item>
+        <item name="displayColor">#fff8ec</item>
+        <item name="funcButtonColor">#fdb473</item>
+        <item name="numButtonColor">#fdeedb</item>
+        <item name="buttonPressedTextColor">#e5bcbc</item>
+        <item name="buttonDigitTextColor">#8e6234</item>
+        <item name="buttonEqualColor">#ffed65</item>
+        <item name="buttonCColor">#f5550b</item>
+        <item name="backgroundColor">#ab5b1e</item>
+        <item name="displayFontColor">#843c00</item>
+        <item name="erase_icon">@drawable/clear_regular</item>
+        <item name="sqr_icon">@drawable/sqr_x_regular</item>
+        <item name="menu_icon">@drawable/menu_img_regular</item>
+    </style>
+
 </resources>

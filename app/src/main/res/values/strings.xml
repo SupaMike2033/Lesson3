@@ -2,4 +2,6 @@
     <string name="app_name">Calc</string>
     <string name="theme_regular">Regular</string>
     <string name="theme_pink">Pink</string>
+    <string name="theme_abs_black">Absolute Black</string>
+    <string name="theme_orange">Orange</string>
 </resources>
