@@ -1,5 +1,6 @@
 package com.example.lesson3.Calc;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import com.example.lesson3.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 
-public class CalcMain extends AppCompatActivity implements View.OnClickListener {
+public class CalcMain extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     MaterialTextView displayTextView, signDisplay, actionDisplay, memoryDisplay;
     Display display;
@@ -76,6 +77,7 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
 
     private void setButtonsClickListeners() {
         button_settings.setOnClickListener(this);
+        button_settings.setOnLongClickListener(this);
         button_MC.setOnClickListener(this);
         button_MR.setOnClickListener(this);
         button_MPlus.setOnClickListener(this);
@@ -121,7 +123,7 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
                 Toast.makeText(getApplicationContext(), "Кнопка ещё не готова", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_reserved:
-                arithmetics.menuPressed(this);
+                arithmetics.menuPressedShort(this);
                 break;
             case R.id.button_Minus:
                 arithmetics.actionMinus();
@@ -186,7 +188,26 @@ public class CalcMain extends AppCompatActivity implements View.OnClickListener 
     private void savePreferences() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.edit().putInt(ThemeUtils.THEME_KEY, Constants.currentTheme).commit();
-        Log.d("MMM", "Theme saved into prefs = " + Constants.currentTheme);
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        Intent intent = new Intent(this, ChooseTheme.class);
+        startActivityForResult(intent, Constants.CHANGE_THEME_REQUEST_CODE);
+        return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Constants.CHANGE_THEME_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            if(data.hasExtra(Constants.CURRENT_THEME)) {
+                Constants.currentTheme = data.getIntExtra(Constants.CURRENT_THEME, 0);
+                savePreferences();
+                ThemeUtils.setCalcTheme(this, Constants.currentTheme);
+            }
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+        return;
+    }
 }

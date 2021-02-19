@@ -1,19 +1,17 @@
 package com.example.lesson3.Calc;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.Application;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.res.Resources;
+import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.example.lesson3.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Arithmetics {
+public class Arithmetics extends AppCompatActivity {
 
     private Display display;
     private Activity activity;
@@ -291,15 +289,17 @@ public class Arithmetics {
         tmp = operand;
     }
 
-    public void menuPressed(Context context) {
+    public void menuPressedShort(Context context) {
         Constants.currentTheme++;
         if(Constants.currentTheme == Constants.themeNames.length) {
             Constants.currentTheme = 0;
         }
-        Resources resources = context.getResources();
-        String str = resources.getString(Constants.themeNames[Constants.currentTheme]);
-        Log.d("MMM", str + " = " + Constants.currentTheme);
+
+//        String str = resources.getString(Constants.themeNames[Constants.currentTheme]);   // это только для тестов
+//        Log.d("MMM", str + " = " + Constants.currentTheme);                               // это только для тестов
 
         ThemeUtils.setCalcTheme(activity, Constants.currentTheme);
+        Toast.makeText(activity.getApplicationContext(), "Удерживайте для выбора", Toast.LENGTH_SHORT).show();
     }
+
 }

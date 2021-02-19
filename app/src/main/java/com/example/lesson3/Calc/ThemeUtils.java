@@ -17,7 +17,7 @@ public class ThemeUtils {
         Constants.currentTheme = themeCode;
         activity.setTheme(Constants.themeIDs[themeCode]);
 
-        Log.d("MMM", "Theme = " + Constants.themeNames[themeCode]);
+//        Log.d("MMM", "Theme = " + Constants.themeNames[themeCode]);
     }
 
     public static void setCalcTheme(Activity activity, int tCode) {
@@ -25,6 +25,6 @@ public class ThemeUtils {
         activity.finish();
         activity.startActivity(new Intent(activity, activity.getClass()));
 
-        Log.d("MMM", "New Theme set = " + Constants.themeNames[themeCode]);
+//        Log.d("MMM", "New Theme set = " + Constants.themeNames[themeCode]);
     }
 }
